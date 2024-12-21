@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
-        myWebView.loadUrl("http://humanitas.noip.pl:3000/mobilna.html");
+        myWebView.loadUrl("http://humanitas.noip.pl:3000/mobilna.html"); //Komentarz
 
 
     }
