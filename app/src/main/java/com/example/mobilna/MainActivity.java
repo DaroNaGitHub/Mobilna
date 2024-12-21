@@ -20,13 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * To jest komentarz testowy od Macieja github test
-     * @author: Maciej
-     * @since: 2024-12-21
-     * 
-     */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
