@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Ukrycie pasków systemowych
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_FULLSCREEN |
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
-                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-        );
+//        getWindow().getDecorView().setSystemUiVisibility(
+//                View.SYSTEM_UI_FLAG_FULLSCREEN |
+//                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+//                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+//                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+//                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//        );
 
         WebView myWebView = findViewById(R.id.webView);
         myWebView.getSettings().setJavaScriptEnabled(true);
@@ -88,12 +88,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
+//        getWindow().setFlags(
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+//        );
 
-        myWebView.loadUrl("http://humanitas.noip.pl:3000/mobilna.html"); //Komentarz
+        myWebView.loadUrl("http://humanitas.noip.pl:7000");
 
 
     }

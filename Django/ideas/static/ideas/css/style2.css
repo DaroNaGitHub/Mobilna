@@ -1,0 +1,608 @@
+html, body {
+    height: 100%; /* Upewnia się, że przeglądarka ma pełną wysokość */
+    margin: 0;    /* Usuwa domyślne marginesy */
+  }
+
+
+.container-szkolenia {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    border: 0px solid #000; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 18px 0px 20px -12px rgb(66, 68, 90);
+}  
+
+.centralnie{
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.tekst{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 15px;
+}
+
+
+
+.margines {
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.marginesGorny{
+    margin-top: 15px;
+}
+
+.marginesDolny{
+    margin-bottom: 15px;
+}
+
+.marginesDolnyEdit{
+    margin-bottom: 5px;
+}
+.czasTrwania{
+    width: 40px;
+}
+
+.pasek_gorny {
+    width: 100%;
+    height: 95px;
+    background-color: rgb(0, 255, 30);
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Przewijany obszar harmonogramów */
+#switch-container-szkolenia {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px; /* Odstęp między kontenerem a przyciskiem */
+}
+
+#kafelek-container-szkolenia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px; /* Odstęp między kontenerem a przyciskiem */
+}
+
+#szkolenie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px; /* Odstęp między kontenerem a przyciskiem */
+}
+
+.dodaj_harmonogram {
+    height: 40px;
+    background-color: white;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+}
+
+.nowy_harmonogram {
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kursor {
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 23px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+.zapisz{
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    text-align: right;
+}
+
+.edycja{
+    position: absolute;
+    left: 50px;
+    top: 30px;
+}
+
+.strona{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.onTime{
+    width: 80px;
+}
+
+.onDate{
+    width: 100px;
+}
+
+.usun{
+    position: absolute;
+    right: 20px;
+}
+
+
+
+.dodajSzkolenie{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    /* height: 180px; */
+    padding: 20px;
+    border: 2px solid white;
+    background-size: cover;
+    background-color: transparent;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.usunSzkolenie{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 180px;
+    padding: 20px;
+    border: 2px solid white;
+    background-size: cover;
+    background-color: transparent;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+
+
+.prawa{
+    position: absolute;
+    right: 30px;
+}
+
+.lewa{
+    position: absolute;
+    left: 30px;
+}
+
+.tytul{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.header {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button_brama {
+    width: 280px;
+    height: 150px;
+    margin: 10px;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.button_brama:hover {
+    transform: scale(1.1);
+}
+
+.kafelek {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 110px;
+    height: 160px;
+    border: 2px solid white;
+    background-size: cover;
+    background-color: transparent;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.kafelek:hover{
+    transform: scale(1.2);
+}
+
+.kafelek_brama {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    height: 180px;
+    align-items: center;
+    border: 2px solid white;
+    background-size: cover;
+    background-color: transparent;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* .kafelek_brama:hover{
+    transform: scale(1.2);
+} */
+
+.harmonogramLista {
+    position: absolute;
+    top: 60px;                     
+    width: 90%;
+    height: 88vh;
+    background-color: white;
+    border-radius: 15px;              
+    z-index: 2;                    
+    border: 0px solid #000; 
+    box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+    flex-direction: column;
+    padding: 10px;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    align-items: center;
+}
+
+.szkolenie {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 175px;
+    padding: 20px;
+    border: 2px solid white;
+    background-size: cover;
+    background-color: transparent;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.szkolenie:hover{
+    transform: scale(1.2);
+}
+  
+
+  
+.button-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Styl dla pozycji pionowej (portrait) */
+@media (orientation: portrait) {
+    .lista{
+        position: relative;
+        width: 98%;
+        margin: 5px;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .lista1Czesc{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lista2Czesc{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lista3Czesc{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .rectangle {
+      background-color: lightblue;
+      height: 100vh;
+      width: 100%;
+    }
+    .harmonogramy {
+        position: absolute;
+        top: 60px;                     
+        width: 90%;
+        height: 88vh;
+        background-color: white;
+        border-radius: 15px;              
+        z-index: 2;                    
+        border: 0px solid #000; 
+        box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        align-items: center;
+    }
+  }
+  
+  /* Styl dla pozycji poziomej (landscape) */
+  @media (orientation: landscape) {
+    .lista{
+        position: relative;
+        width: 98%;
+        height: 25px;
+        display: flex;
+        margin: 5px;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .lista1Czesc{
+        position: relative;
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .lista2Czesc{
+        position: relative;
+        width: 29%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .lista3Czesc{
+        position: relative;
+        width: 29%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .rectangle {
+      background-color: lightcoral;
+      height: 50vh;
+      width: 100%;
+    }
+    .harmonogramy {
+        position: absolute;
+        top: 60px;                     
+        width: 90%;
+        height: 72vh;
+        background-color: white;
+        border-radius: 15px;              
+        z-index: 2;                    
+        border: 0px solid #000; 
+        box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        overflow-y: auto;
+    }
+  }
+
+.section{
+    border: 1px solid #000;
+    min-height: 800px;
+    width: 100%;
+}
+.sticky-header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    top: 0;
+    background-color: #13ee4a;
+}
+.main-menu{
+    width: 100%;
+}
+.main-menu-inner {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.main-menu-item {
+    margin: 0 10px;
+}
+
+.main-menu-item a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+.to-top{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: yellow;
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+    color: black;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+}
+* {
+    box-sizing: border-box;
+}
+
+.fontSize{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.fontTytul{
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 12px;
+    color: red;
+}
+
+.listaTytul{
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: red;
+}
+
+.font{
+    display: flex;
+    justify-content: center; 
+}
+  /* Stylizacja przycisku hamburgera */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+/* Ukrycie menu na mniejszych ekranach */
+@media (max-width: 768px) {
+    .main-menu-inner {
+        display: none; /* Menu ukryte domyślnie */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #C1BAFA;
+        width: 150px;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .main-menu-inner.active {
+        display: flex; /* Menu widoczne po kliknięciu */
+    }
+
+    .hamburger {
+        display: block; /* Hamburger widoczny */
+    }
+
+    .main-menu-item {
+        margin: 10px 0; /* Dostosowanie odstępów w menu pionowym */
+    }
+
+    .main-menu-item a {
+        text-align: center;
+        display: block;
+        padding: 10px 0;
+    }
+}

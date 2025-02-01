@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="pl">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ideas/css/style.css' %}">
+    <title>Szkolenia</title>
+  </head>
+  <body>
+
+{% block content %}
+<div class="container-szkolenia">
+    <header class="sticky-header">
+        <nav class="main-menu">
+            <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+            <ul class="main-menu-inner">
+                <li class="btn btn-outline-primary"><a href="{% url 'public_page' %}">Strona główna</a></li>
+                <li class="btn btn-outline-primary"><a href="{% url 'lista_szkolen' %}">Szkolenia</a></li>
+                {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                <li class="btn btn-outline-primary"><a href="{% url 'custom_admin_panel' %}">Administracja</a></li>
+                {% endif %}
+                <a class="btn btn-outline-danger" href="JavaScript:{document.getElementById('logout').submit()}">Wyloguj się</a>
+                {% else %}
+                <a class="btn btn-outline-primary" href="{% url 'login_page' %}">Zaloguj się</a>
+                {% endif %}
+                
+                
+            </ul>
+            
+        </nav>
+        
+        {% if user.is_authenticated %}
+      <form id="logout" method="POST" action="{% url 'logout_page' %}">
+        {% csrf_token %}
+        <input type="hidden">
+      </form>
+      {% endif %}
+    </header>
+        
+    
+    <div class="harmonogramy">
+      <div class="tytul"><h2>Strona rejestracji</h2></div>  
+      <div class="dodajSzkolenie"> 
+      {% if error %}
+      <div class="alert alert-danger">
+        {{ error }}<br>
+      </div>
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="first_name" placeholder="Imię"><br><br>
+      <input type="text" name="last_name" placeholder="Nazwisko"><br><br>
+      <input type="text" name="email" placeholder="e-mail"><br><br>
+      <input type="text" name="username" placeholder="Nazwa użytkownika"><br><br>
+      <input type="password" name="password1" placeholder="Hasło"><br><br>
+      <input type="password" name="password2" placeholder="Potwierdź hasło"><br><br>
+
+      <input class="btn btn-primary" type="submit" value="Zarejestruj">
+    </form>      
+    </div>    
+    </div>
+</div>
+{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="{% static 'ideas/js/scrypts.js' %}" defer></script>
+   
+    </body>
+</html>
