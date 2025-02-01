@@ -1,0 +1,11 @@
+version: '3'
+services:
+  django-app:
+    build:
+      context: .
+    ports:
+      - "7000:7000" # Mapowanie portów: host:kontener
+    volumes:
+      - .:/app # Opcjonalnie, synchronizacja plików
+    environment:
+      - DEBUG=1

@@ -1,0 +1,422 @@
+html, body {
+    height: 100%; /* Upewnia się, że przeglądarka ma pełną wysokość */
+    margin: 0;    /* Usuwa domyślne marginesy */
+}
+
+.container-szkolenia {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    border: 0px solid #000; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 18px 0px 20px -12px rgb(66, 68, 90);
+}  
+
+.sticky-header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    top: 0;
+    background-color: #13ee4a;
+}
+
+.main-menu-item a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Stylizacja przycisku hamburgera */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+.fontTytul{
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 12px;
+    color: red;
+}
+
+.tytul{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.usunSzkolenie{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 180px;
+    padding: 20px;
+    border: 2px solid white;
+    background-size: cover;
+    background-color: transparent;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.fontSize{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.marginesGorny{
+    margin-top: 15px;
+}
+
+/* .prawa{
+    position: absolute;
+    right: 30px;
+} */
+
+.dodajSzkolenie{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 275px;
+    /* height: 180px; */
+    padding: 20px;
+    border: 2px solid white;
+    background-size: cover;
+    background-color: transparent;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.szkolenie {
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+}
+
+/* .szkolenie:hover{
+    transform: scale(1.2);
+} */
+
+.edycja {
+    display: flex;              /* Ustawienie flexboxa */
+    justify-content: space-between; /* Równomierne rozmieszczenie elementów */
+    align-items: center;        /* Wyrównanie w pionie */
+    padding: 10px;              /* Dodatkowe odstępy wewnętrzne */
+}
+
+.edycja div {
+    margin: 0 10px; /* Odstępy między elementami */
+}
+
+.lewa {
+    color: blue;
+}
+
+.srodek {
+    color: green;
+}
+
+.prawa {
+    color: red;
+}
+
+.kasowanie{
+    background: none;       /* Usuń domyślne tło */
+    border: none;           /* Usuń obramowanie */
+    padding: 0;             /* Usuń odstępy wewnętrzne */
+    margin: 0;              /* Usuń odstępy zewnętrzne */
+    color: inherit;         /* Dziedzicz kolor tekstu */
+    font: inherit;          /* Dziedzicz czcionkę */
+    cursor: pointer;        /* Dodaj wskaźnik kursora na hover */
+    text-decoration: none;  /* Usuń podkreślenie */
+    color: #007bff;
+}
+
+.prawaEd{
+    position: absolute;
+    right: 30px;
+}
+
+.lewaEd{
+    position: absolute;
+    left: 30px;
+}
+
+
+.tekst{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 15px;
+}
+
+.marginesDolny{
+    margin-bottom: 15px;
+}
+
+.harmonogramLista {
+    position: absolute;
+    top: 60px;                     
+    width: 90%;
+    height: 88vh;
+    background-color: white;
+    border-radius: 15px;              
+    z-index: 2;                    
+    border: 0px solid #000; 
+    box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+    flex-direction: column;
+    padding: 10px;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    align-items: center;
+}
+
+.listaTytul{
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: red;
+}
+
+.centralnie{
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.main-menu{
+    width: 100%;
+}
+
+.main-menu-inner {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.main-menu-item {
+    margin: 0 10px;
+}
+
+.dodaj_szkolenie {
+    height: 40px;
+    background-color: white;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+}
+
+#switch-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px; /* Odstęp między kontenerem a przyciskiem */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ukrycie menu na mniejszych ekranach */
+@media (max-width: 768px) {
+    .main-menu-inner {
+        display: none; /* Menu ukryte domyślnie */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #C1BAFA;
+        width: 150px;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .main-menu-inner.active {
+        display: flex; /* Menu widoczne po kliknięciu */
+    }
+
+    .hamburger {
+        display: block; /* Hamburger widoczny */
+    }
+
+    .main-menu-item {
+        margin: 10px 0; /* Dostosowanie odstępów w menu pionowym */
+    }
+
+    .main-menu-item a {
+        text-align: center;
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+
+/* Styl dla pozycji pionowej (portrait) */
+@media (orientation: portrait) {
+    .lista{
+        position: relative;
+        width: 98%;
+        margin: 5px;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .lista1Czesc{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lista2Czesc{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lista3Czesc{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .harmonogramy {
+        position: absolute;
+        top: 60px;
+        width: 90%;
+        height: 88vh;
+        background-color: white;
+        border-radius: 15px;
+        z-index: 2;
+        border: 0px solid #000;
+        box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    /* .harmonogramy {
+        position: absolute;
+        top: 60px;                     
+        width: 90%;
+        height: 88vh;
+        background-color: white;
+        border-radius: 15px;              
+        z-index: 2;                    
+        border: 0px solid #000; 
+        box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        align-items: center;
+    } */
+}
+  
+  /* Styl dla pozycji poziomej (landscape) */
+@media (orientation: landscape) {
+    .lista{
+        position: relative;
+        width: 98%;
+        height: 25px;
+        display: flex;
+        margin: 5px;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .lista1Czesc{
+        position: relative;
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .lista2Czesc{
+        position: relative;
+        width: 29%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .lista3Czesc{
+        position: relative;
+        width: 29%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .harmonogramy {
+        position: absolute;
+        top: 60px;
+        width: 90%;
+        height: 72vh;
+        background-color: white;
+        border-radius: 15px;
+        z-index: 2;
+        border: 0px solid #000;
+        box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+
+    /* .harmonogramy {
+        position: absolute;
+        top: 60px;                     
+        width: 90%;
+        height: 72vh;
+        background-color: white;
+        border-radius: 15px;              
+        z-index: 2;                    
+        border: 0px solid #000; 
+        box-shadow: 0px 0px 20px 0px rgb(66, 68, 90);
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        overflow-y: auto;
+    } */
+}
